@@ -44,6 +44,9 @@ nav ul li a:hover, a.active{
     gap: 70px;
     align-items: center;
 }
+#content{
+    display: none;
+}
 .booking-content{
     color: #fff;
     width: 100%;
@@ -92,9 +95,16 @@ nav ul li a:hover, a.active{
     display: flex;
     justify-content: space-between;
     align-items: center;
+    width: unset;
+    display: inline;
 }
 .inp-width{
     min-width: 300px;
+}
+#first-class-selection-count, #economy-class-selection-count{
+    width: unset;
+    display: inline;
+    margin: 15px;
 }
 .plus-minus-btn{
     color: #3352F2;
