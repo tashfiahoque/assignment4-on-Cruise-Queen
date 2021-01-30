@@ -1,7 +1,3 @@
-
-
-
-
 function handleClassSelection(selectedClass, isIncrease) {
     const selectionInput = document.getElementById(selectedClass + "-class-selection-count");
     const inputCount = parseInt(selectionInput.value);
@@ -21,35 +17,38 @@ function handleClassSelection(selectedClass, isIncrease) {
     document.getElementById(selectedClass + "-class-price").innerText = selectedClassPriceTotal;
     getTotalPrice();
 }
+
+
 function getInputValues(selectedClass) {
     const selectionInput = document.getElementById(selectedClass + "-class-selection-count");
     const inputCount = parseInt(selectionInput.value);
     return inputCount;
 }
+
+
 function getTotalPrice() {
     const inputFirstClassCount = getInputValues('first');
     const inputEconomyClassCount = getInputValues('economy');
+    document.getElementById("final-count-first-class").innerText = inputFirstClassCount;
+    document.getElementById("final-count-economy-class").innerText = inputEconomyClassCount;
     const subTotalPrice = inputFirstClassCount * 150 + inputEconomyClassCount * 100;
     document.getElementById("sub-total").innerText = subTotalPrice;
+    document.getElementById("sub-total-final").innerText = subTotalPrice;
     const taxAmount = Math.round(subTotalPrice * 0.1);
     document.getElementById("tax-amount").innerText = taxAmount;
+    document.getElementById("tax-amount-final").innerText = taxAmount;
     const totalAmount = subTotalPrice + taxAmount;
     document.getElementById("total-amount").innerText = totalAmount;
+    document.getElementById("total-amount-final").innerText = totalAmount;
 }
-// document.getElementById("book-btn").addEventListener("click", function () {
-//     const bookingPage = document.getElementById("booking-page");
-//     bookingPage.style.display = "none";
-//     const contentPage = document.getElementById("content");
-//     contentPage.style.display = "block";
-// })
-function displayHomePage(isTrue) {
-    const bookingPage = document.getElementById("booking-page");
-    const contentPage = document.getElementById("content");
-    if (isTrue === true) {
-        bookingPage.style.display = "none";
-        contentPage.style.display = "block";
+
+
+function displayHomePage(state) {
+    if (state == true) {
+        document.getElementById("booking-page").style.display = "none";
+        document.getElementById("billing-page").style.display = "block";
     } else {
-        bookingPage.style.display = "block";
-        contentPage.style.display = "none";
+        document.getElementById("booking-page").style.display = "block";
+        document.getElementById("billing-page").style.display = "none";
     }
 } 

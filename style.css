@@ -44,9 +44,6 @@ nav ul li a:hover, a.active{
     gap: 70px;
     align-items: center;
 }
-#content{
-    display: none;
-}
 .booking-content{
     color: #fff;
     width: 100%;
@@ -131,4 +128,25 @@ nav ul li a:hover, a.active{
 .amount{
     display: flex;
     justify-content: space-between;
+}
+#billing-page{
+    display: none;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    width: 40%;
+    padding: 50px;
+    margin-top: 150px;
+}
+#billing-page h1{
+    margin-bottom: 20px;
+}
+#billing-page p{
+    font-weight: 500;
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+.billing-btn-style{
+    width: 30%;
+    float: right;
 }
